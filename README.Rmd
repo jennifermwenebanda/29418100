@@ -1,0 +1,187 @@
+---
+title: "29418100 — Data Science Practical Examination"
+subtitle: "Summary report: Questions 1-4"
+author: "29418100"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  md_document:
+    variant: gfm
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+                      fig.align = "center", out.width = "100%")
+library(tidyverse)
+library(knitr)
+```
+
+# Purpose
+
+This is the root README for the Data Science Practical Exam, student number 29418100.
+Each question lives in its own self-contained folder (`Question#/`, with its own
+`.Rproj`, `.Rmd`, `code/` and a `data/` junction that is not committed to git). This
+file pulls the three most important figures and a key results table out of each
+question's own report, together with a short overview of the approach, the headline
+result, and a one-line recommendation. For the full analysis, knit `Question#/Question#.Rmd`
+directly inside that question's own project.
+
+---
+
+# Question 1 — Coffee Hub
+
+A coffee entrepreneur stocking the Neelsie wants to know which coffees, roasts and
+regions to source. Every coffee in the supplied database is scored on flavour-keyword
+match against the Stellenbosch student survey (35%), expert rating (30%), price (20%,
+cheaper is better) and shipping distance to Cape Town (15%, closer is better), each
+normalised to 0-1, to build one ranked business-viability score per coffee.
+
+```{r q1-roast, fig.cap = "Average expert rating by roast strength"}
+knitr::include_graphics("Question1/Question1_files/figures/rating_by_roast.png")
+```
+
+```{r q1-flavour, fig.cap = "Coffees ranked by match against Stellenbosch students' preferred flavour words"}
+knitr::include_graphics("Question1/Question1_files/figures/flavour_match_top.png")
+```
+
+```{r q1-score, fig.cap = "Coffees ranked by combined business-viability score"}
+knitr::include_graphics("Question1/Question1_files/figures/business_score_ranked.png")
+```
+
+```{r q1-table}
+read_csv("Question1/Question1_files/tables/recommendation_table.csv", show_col_types = FALSE) %>%
+  slice_head(n = 5) %>%
+  kable(caption = "Top 5 recommended coffees by business-viability score")
+```
+
+> **Recommendation:** Lead the shelf with light/medium-roast Kenyan and Ethiopian
+> coffees — they combine the strongest flavour-keyword matches with high expert ratings
+> at a fraction of the price of comparable Panama lots. Top pick: **Kenya Ruthaka
+> Peaberry** (Temple Coffee Roasters, US) — 93% flavour match, rating 95, $5.58/100g.
+
+---
+
+# Question 2 — Baby Names
+
+A New York toy design agency wants to know how persistent US baby-naming trends are
+(1910-2014), and whether music or television measurably drives naming spikes. Each
+year's Top-25 boys'/girls' names are rank-correlated (Spearman) against the following
+1-3 years, and the sharpest year-on-year spikes are matched against Billboard chart and
+HBO character data.
+
+```{r q2-persist, fig.cap = "Spearman rank correlation between Top-25 names in year t and year t+lead, 1910-2014"}
+knitr::include_graphics("Question2/Question2_files/figures/persistence_trend.png")
+```
+
+```{r q2-spikes, fig.cap = "The biggest year-on-year name spikes, sized by peak births"}
+knitr::include_graphics("Question2/Question2_files/figures/name_spikes_bubble.png")
+```
+
+```{r q2-hbo, fig.cap = "HBO characters with the strongest baby-name impact ratio"}
+knitr::include_graphics("Question2/Question2_files/figures/hbo_effects.png")
+```
+
+```{r q2-table}
+read_csv("Question2/Question2_files/tables/era_summary.csv", show_col_types = FALSE) %>%
+  filter(lead == 3) %>%
+  transmute(Gender = gender, Era = era, `Median correlation` = round(median_correlation, 3)) %>%
+  kable(caption = "Median 3-year-lead rank correlation, pre- vs post-1990")
+```
+
+> **Recommendation:** Naming trends are real but have become measurably less sticky
+> since 1990 — boys' 3-year-lead median correlation falls from 0.94 pre-1990 to 0.84
+> post-1990. Blend a stable core of long-persistent classic names for flagship toy
+> lines with a rotating set of culturally-sourced names (pulled from current
+> Billboard/streaming data) for limited-edition lines, and expect any single trending
+> name today to fade faster than one would have a generation ago.
+
+---
+
+# Question 3 — Loans and Credit
+
+The US Credit Institute wants to know what actually drives default on ~383,000 resolved
+Lending Club loans (Fully Paid vs. Charged Off), and whether its own long-held heuristics
+about home ownership, state culture, credit grade and interest-rate drivers hold up.
+
+```{r q3-grade, fig.cap = "Default rate by Lending Club credit grade"}
+knitr::include_graphics("Question3/Question3_files/figures/grade_default.png")
+```
+
+```{r q3-drivers, fig.cap = "Multivariate default-model variable importance"}
+knitr::include_graphics("Question3/Question3_files/figures/risk_drivers.png")
+```
+
+```{r q3-state, fig.cap = "Default rate by US state, with Texas highlighted"}
+knitr::include_graphics("Question3/Question3_files/figures/state_default_map.png")
+```
+
+```{r q3-table}
+read_csv("Question3/Question3_files/tables/grade_summary.csv", show_col_types = FALSE) %>%
+  transmute(Grade = grade, Loans = format(n, big.mark = ","),
+            `Default rate` = scales::percent(default_rate, 0.1)) %>%
+  kable(caption = "Default rate by credit grade")
+```
+
+> **Recommendation:** Anchor underwriting on credit grade first — it dominates every
+> other variable's odds ratio in the multivariate model, with default rising from 6.9%
+> at Grade A to 57.3% at Grade G. Treat home ownership, employment length and state
+> geography as secondary adjustments only. A DTI hard cap around 25-30% balances risk
+> reduction against loan volume, and Texas needs no special treatment — its 22.8%
+> default rate is statistically indistinguishable from the 22.5% national average.
+
+---
+
+# Question 4 — Netflix
+
+Ahead of launching a competing streaming service, the team wants to know what works on
+Netflix's catalogue (up to 2022/23): which genres and countries dominate, how movies
+compare to TV shows on rating, and how content length varies by country.
+
+```{r q4-prep, include = FALSE}
+titles <- readRDS("Question4/data/netflix/titles.rds")
+source("Question4/code/netflix_plots.R")
+
+dir.create("Question4/Question4_files/figures", recursive = TRUE, showWarnings = FALSE)
+dir.create("Question4/Question4_files/tables",  recursive = TRUE, showWarnings = FALSE)
+
+ggsave("Question4/Question4_files/figures/genre_popularity.png",
+       plot_genre_popularity(titles), width = 9, height = 5, dpi = 300)
+ggsave("Question4/Question4_files/figures/score_distribution.png",
+       plot_score_distribution(titles), width = 9, height = 5, dpi = 300)
+ggsave("Question4/Question4_files/figures/runtime_by_country.png",
+       plot_runtime_by_country(titles), width = 9, height = 5, dpi = 300)
+
+top_countries <- titles %>%
+  filter(!is.na(production_countries)) %>%
+  mutate(country = purrr::map_chr(production_countries, function(c) {
+    if (is.null(c) || length(c) == 0) return(NA_character_)
+    c[[1]]
+  })) %>%
+  mutate(country = str_remove_all(country, "[\\[\\]']")) %>%
+  filter(!is.na(country), nchar(country) > 0) %>%
+  count(country, sort = TRUE) %>%
+  slice_head(n = 8)
+write_csv(top_countries, "Question4/Question4_files/tables/top_countries.csv")
+```
+
+```{r q4-genre, fig.cap = "Top Netflix genres by title count, coloured by average TMDb score"}
+knitr::include_graphics("Question4/Question4_files/figures/genre_popularity.png")
+```
+
+```{r q4-score, fig.cap = "TMDb score distribution: movies vs. TV shows"}
+knitr::include_graphics("Question4/Question4_files/figures/score_distribution.png")
+```
+
+```{r q4-runtime, fig.cap = "Median runtime by production country (top 12 by volume)"}
+knitr::include_graphics("Question4/Question4_files/figures/runtime_by_country.png")
+```
+
+```{r q4-table}
+top_countries %>%
+  kable(col.names = c("Country", "# Titles"), caption = "Top 8 production countries by title count")
+```
+
+> **Recommendation:** Invest in original TV dramas and documentaries over movies — shows
+> average 7.5 vs. movies' 6.45 on TMDb — and look beyond the US catalogue core. Indian
+> films alone run more than double the typical US runtime (132 vs. 65 min median),
+> signalling a genuinely different, underserved viewing culture worth co-producing for
+> rather than copying outright.
