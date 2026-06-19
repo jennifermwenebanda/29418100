@@ -1,0 +1,77 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+# Purpose
+
+Illustrate workthrough of Question 3: Loans and Credit.
+
+```{r}
+
+rm(list = ls())
+gc()
+library(tidyverse)
+
+# run_project.R sources every function in code/ (one file, one function),
+# loads and cleans the loan book, runs every heuristic test, the borrower
+# risk profiles, the Texas deep-dive, the DTI threshold scenarios, the
+# grading-system evaluation and the full default model - and saves every
+# resulting table to Question3_files/tables/ and every figure to
+# Question3_files/figures/.
+source("run_project.R")
+
+```
+
+## Institute Heuristic 1: Home ownership
+
+```{r}
+home_summary
+Homeownership_Default_Plot(home_summary)
+```
+
+## Institute Heuristic 3: State-level default culture (flagship map)
+
+```{r, fig.width=10, fig.height=7}
+State_Default_Map(state_summary)
+```
+
+Texas in national context:
+
+```{r}
+texas_summary
+Texas_Comparison_Plot(texas_summary)
+```
+
+## Institute Heuristic 4: Does the grading system hold up for young borrowers?
+
+```{r}
+grade_age_summary
+grade_monotonic
+```
+
+## DTI policy thresholds
+
+```{r}
+dti_scen
+```
+
+## Grading-system efficacy
+
+```{r}
+grade_summary
+grade_auc
+Grade_Default_Plot(grade_summary, grade_auc$auc)
+```
+
+## Strongest predictors of default
+
+```{r, fig.width=10, fig.height=8}
+var_importance
+Risk_Driver_Plot(var_importance)
+```
+
+See `Question3.Rmd` for the full Director-facing write-up, and
+`Question3_files/tables/` and `Question3_files/figures/` for every
+persisted result this script produces.

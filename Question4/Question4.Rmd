@@ -1,0 +1,164 @@
+---
+title: "Netflix Content Analysis: What Works in Streaming?"
+author: "29418100"
+date: "`r Sys.Date()`"
+bibliography: Tex/ref.bib
+output:
+  pagedown::html_paged:
+    css: ["Template/default-fonts-Texevier.css",
+          "Template/default-page-Texevier.css",
+          "Template/default-Texevier.css"]
+    csl: Template/harvard-stellenbosch-university.csl
+    template: ["Template/paged-Texevier.html"]
+    toc: true
+    self_contained: TRUE
+abstract: |
+  This concise report analyses Netflix title and movie data (up to 2023) to guide
+  investors considering a new streaming service launch. Key findings: Drama and Comedy
+  dominate the catalogue; US content is most numerous but Korean and Japanese titles
+  score highest per-viewer; TV shows outscore movies on average TMDb ratings; and
+  documentary content represents an underserved high-rating niche.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo    = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width  = 9,
+  fig.height = 5
+)
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, scales, knitr, janitor, tidytext, forcats, pagedown)
+
+list.files("code/", full.names = TRUE, recursive = TRUE) %>%
+  as.list() %>%
+  purrr::walk(~source(.))
+
+# Load data
+titles      <- readRDS("data/netflix/titles.rds")
+credits     <- readRDS("data/netflix/credits.rds")
+movie_info  <- readr::read_csv("data/netflix/netflix_movies.csv",
+                                show_col_types = FALSE)
+```
+
+# 1. Catalogue Overview
+
+```{r overview}
+tibble::tibble(
+  Metric = c("Total titles", "Movies", "TV Shows",
+             "Countries represented", "Year range",
+             "Avg TMDb score"),
+  Value  = c(
+    format(nrow(titles), big.mark = ","),
+    format(sum(titles$type == "MOVIE",   na.rm = TRUE), big.mark = ","),
+    format(sum(titles$type == "SHOW",    na.rm = TRUE), big.mark = ","),
+    dplyr::n_distinct(
+      unlist(stringr::str_split(titles$production_countries, ",")), na.rm = TRUE
+    ),
+    paste(min(titles$release_year, na.rm = TRUE), "–",
+          max(titles$release_year, na.rm = TRUE)),
+    round(mean(titles$tmdb_score, na.rm = TRUE), 2)
+  )
+) %>% knitr::kable(caption = "Netflix Catalogue at a Glance")
+```
+
+---
+
+# 2. Content Growth Over Time
+
+```{r releases, fig.cap="Netflix title releases by year — rapid growth from 2015"}
+plot_releases_over_time(titles)
+```
+
+- Netflix content exploded from **2015 onward** — relevant baseline for a new entrant
+- **TV shows have grown faster** than movies since 2017
+
+---
+
+# 3. Genre Landscape
+
+```{r genres, fig.cap="Top 12 genres — colour shows average audience score"}
+plot_genre_popularity(titles, top_n = 12)
+```
+
+- **Drama** and **Comedy** are by far the most common genres
+- **Documentaries** and **Crime** achieve some of the highest average TMDb scores despite
+  smaller catalogue share — an **underserved high-quality niche**
+
+---
+
+# 4. Rating Comparison: Movies vs. TV Shows
+
+```{r score-dist, fig.cap="TV shows score higher than movies on average"}
+plot_score_distribution(titles)
+```
+
+- TV shows have a **higher median TMDb score** and narrower distribution
+- Movies have a **longer left tail** — many low-scoring titles drag the average down
+- **Implication:** Investing in quality serialised content likely yields better audience scores
+
+---
+
+# 5. Country Breakdown — Runtime & Volume
+
+```{r runtime, fig.cap="Median runtime by country (titles.rds, min. 5 titles)"}
+# runtime lives in titles.rds; production_countries used for country label
+plot_runtime_by_country(titles, top_n = 12)
+```
+
+```{r top-countries}
+# netflix_movies.csv has an explicit country column — use it for volume ranking
+movie_info %>%
+  dplyr::filter(!is.na(country), country != "") %>%
+  tidyr::separate_rows(country, sep = ",") %>%
+  dplyr::mutate(country = stringr::str_trim(country)) %>%
+  dplyr::count(country, sort = TRUE) %>%
+  dplyr::slice_head(n = 10) %>%
+  knitr::kable(col.names = c("Country", "# Movies"),
+               caption = "Top 10 Countries by Movie Count (netflix_movies.csv)")
+```
+
+- **US** dominates in volume; **India** second
+- **Japanese** and **Korean** films have distinctive runtimes reflecting cultural preferences
+- A new streaming service could differentiate by **curating non-US content** with high scores
+
+---
+
+# 6. Textual Analysis — Description Keywords
+
+```{r text-analysis, fig.cap="Most common meaningful words in Netflix title descriptions"}
+if ("description" %in% names(titles)) {
+  titles %>%
+    dplyr::filter(!is.na(description)) %>%
+    tidytext::unnest_tokens(word, description) %>%
+    dplyr::anti_join(tidytext::stop_words, by = "word") %>%
+    dplyr::filter(nchar(word) > 3) %>%
+    dplyr::count(word, sort = TRUE) %>%
+    dplyr::slice_head(n = 20) %>%
+    dplyr::mutate(word = forcats::fct_reorder(word, n)) %>%
+    ggplot2::ggplot(ggplot2::aes(x = word, y = n)) +
+    ggplot2::geom_col(fill = "#e50914") +
+    ggplot2::coord_flip() +
+    ggplot2::labs(title = "Top Words in Netflix Title Descriptions",
+                  x = NULL, y = "Frequency") +
+    ggplot2::theme_minimal(base_size = 13)
+} else {
+  cat("Description column not found — check column names.")
+}
+```
+
+---
+
+# 7. Summary & Investor Recommendations
+
+| Dimension | Finding | Recommendation |
+|---|---|---|
+| **Genre** | Drama/Comedy dominate; Docs punch above their weight | Lead with Drama; invest in Documentary as a differentiator |
+| **Format** | TV shows score higher | Prioritise original serialised content |
+| **Geography** | US has volume; Asia has quality | Blend US originals with Korean/Japanese co-productions |
+| **Runtime** | Varies significantly by country | Avoid one-size-fits-all commissioning targets |
+| **Growth** | Post-2015 explosion | Entering now requires quality differentiation, not volume |
+
+> **Bottom line:** A new streaming service should invest in **high-quality TV dramas, documentary content, and Asian co-productions** rather than competing on raw volume with Netflix.

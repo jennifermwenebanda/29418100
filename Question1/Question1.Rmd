@@ -1,0 +1,167 @@
+---
+title: "Coffee Hub: Recommendations for the Neelsie"
+subtitle: "A Data-Driven Guide to Sourcing Premium, Profitable Coffee"
+author: "29418100"
+date: "`r Sys.Date()`"
+knit: (function(input, ...) { rmarkdown::render(input, clean = FALSE, envir = new.env()) })
+output:
+  powerpoint_presentation:
+    slide_level: 2
+    reference_doc: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo    = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width  = 9,
+  fig.height = 5
+)
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(knitr, readr)
+
+source("code/run_project.R")
+```
+
+## Context
+
+- A coffee entrepreneur wants to stock a **premium coffee shop at the Neelsie**, Stellenbosch University.
+- Goal is not just "highest rated coffee" — it's the coffee that maximises **customer satisfaction and business profitability**.
+- Decision inputs: a database of roasters, expert reviews, ratings, origin, roast strength, price (USD) and roastery location; plus a Stellenbosch student survey of preferred flavour words.
+- This analysis combines **flavour match, expert rating, price and shipping distance** into one ranked business-viability score.
+
+## Data Overview
+
+```{r data-overview}
+tibble::tibble(
+  Metric = c("Total listings", "Unique roasters", "Unique roastery locations",
+             "Rating range", "Price range (USD/100g)"),
+  Value  = c(
+    format(nrow(coffee_scored), big.mark = ","),
+    format(dplyr::n_distinct(coffee_scored$roaster), big.mark = ","),
+    format(dplyr::n_distinct(coffee_scored$loc_country), big.mark = ","),
+    paste0(min(coffee_scored$rating), "-", max(coffee_scored$rating)),
+    paste0("$", round(min(coffee_scored$cost_per_100g), 2), " - $",
+           round(max(coffee_scored$cost_per_100g), 2))
+  )
+) %>% knitr::kable()
+```
+
+## Rating by Roast Strength
+
+```{r roast-rating}
+knitr::include_graphics("Question1_files/figures/rating_by_roast.png")
+```
+
+> **Key insight:** Medium and Light roasts tend to score highest — ideal for a specialty café menu.
+
+## Top Coffee Origins
+
+```{r top-origins}
+knitr::include_graphics("Question1_files/figures/top_origins.png")
+```
+
+> **Key insight:** Ethiopian growing regions (Guji, Yirgacheffe) and Kenyan regions dominate listings — both well-regarded specialty origins.
+
+---
+
+## Q2: Which Coffees Best Match Stellenbosch Flavour Preferences?
+
+Reviews were searched for the student survey's preferred flavour words (sweet,
+chocolate, aroma, mouthfeel, finish, structure, cup, toned, sweetly, savory, notes,
+acidity, syrupy, deeply, zest, richly, tart, fruit, crisp, short).
+
+```{r flavour-match}
+knitr::include_graphics("Question1_files/figures/flavour_match_top.png")
+```
+
+```{r keyword-freq}
+read_csv("Question1_files/tables/keyword_frequency.csv", show_col_types = FALSE) %>%
+  knitr::kable(caption = "Flavour-Word Frequency in Expert Reviews")
+```
+
+> **Key insight:** "Sweet", "chocolate" and "notes" are the most common matched words, and coffees matching more student-preferred words also tend to carry strong expert ratings.
+
+## Q3: Which Suppliers Provide the Best Flavour-Matching Coffees?
+
+```{r supplier-comparison}
+knitr::include_graphics("Question1_files/figures/supplier_comparison.png")
+```
+
+```{r top-suppliers-table}
+read_csv("Question1_files/tables/top_suppliers.csv", show_col_types = FALSE) %>%
+  knitr::kable(caption = "Top 10 Suppliers by Average Flavour Match (min. 2 listings)", digits = 2)
+```
+
+## Q4: What Does the Top Flavour-Matching Coffee Cost?
+
+```{r cost-top-matches}
+overall  <- read_csv("Question1_files/tables/cost_overall.csv", show_col_types = FALSE)
+top_cost <- read_csv("Question1_files/tables/cost_top_matches.csv", show_col_types = FALSE)
+
+dplyr::bind_rows(
+  dplyr::mutate(overall,  Group = "All Coffees", .before = 1),
+  dplyr::mutate(top_cost, Group = "Top 20 Flavour Matches", .before = 1)
+) %>% knitr::kable(caption = "Average Cost per 100g: All Coffees vs. Top Flavour Matches", digits = 2)
+```
+
+```{r price-band}
+knitr::include_graphics("Question1_files/figures/price_band.png")
+```
+
+> **Key insight:** The top flavour-matching coffees are not the most expensive — strong matches exist well within an affordable price band.
+
+## Q6: Which Coffee-Producing Regions/Roastery Locations Should Be Prioritised?
+
+```{r distance-metrics}
+knitr::include_graphics("Question1_files/figures/distance_vs_metrics.png")
+```
+
+```{r distance-table}
+read_csv("Question1_files/tables/distance_summary.csv", show_col_types = FALSE) %>%
+  knitr::kable(caption = "Roastery Locations Ranked by Distance to Cape Town", digits = 1)
+```
+
+> **Key insight:** The United States and Taiwan combine high listing volume with reasonable rating levels; Kenya and Uganda offer the shortest shipping distance to South Africa among origin-adjacent roasters.
+
+## Q5 & Q7: Business Viability Score — Combining Flavour, Rating, Price & Logistics
+
+Each coffee is scored on flavour match (35%), expert rating (30%), price (20%, cheaper
+is better) and shipping distance to Cape Town (15%, closer is better), each normalised
+to a 0-1 scale.
+
+```{r business-score}
+knitr::include_graphics("Question1_files/figures/business_score_ranked.png")
+```
+
+## Final Recommendation: Top 10 Coffees & Suppliers for the Neelsie
+
+```{r recommendation-table}
+read_csv("Question1_files/tables/recommendation_table.csv", show_col_types = FALSE) %>%
+  knitr::kable(caption = "Ranked Recommendation: Optimal Coffees & Suppliers")
+```
+
+## Recommendations Summary
+
+**Flavour & Region:**
+
+- Prioritise Ethiopian (Guji, Yirgacheffe) and Kenyan growing regions — strongest flavour-word matches and ratings.
+
+**Roast:**
+
+- Focus on **Light** and **Medium** roasts for highest expert ratings.
+
+**Suppliers:**
+
+- Contact the top-ranked suppliers in the recommendation table first — they combine strong flavour match, high rating, and reasonable price.
+
+**Logistics:**
+
+- Where flavour/rating/price are comparable, prefer roastery locations closer to South Africa (e.g. Kenya, Uganda) to reduce shipping cost and lead time; the US and Taiwan remain worth sourcing from given their volume and quality despite longer distance.
+
+**Bottom line:** The ranked recommendation table balances customer satisfaction (flavour
+match + rating) against business feasibility (price + logistics) — giving the
+entrepreneur a short, actionable supplier shortlist rather than a purely descriptive
+ratings list.
