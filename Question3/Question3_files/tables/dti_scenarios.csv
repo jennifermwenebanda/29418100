@@ -1,0 +1,4 @@
+scenario,tolerance,dti_cap,n,default_rate
+conservative,0.05,5,19605,0.1693955623565417
+moderate,0.1,5,19605,0.1693955623565417
+aggressive,0.15,5,19605,0.1693955623565417

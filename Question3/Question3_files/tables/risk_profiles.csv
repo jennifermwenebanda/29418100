@@ -1,0 +1,3 @@
+profile,grade,dti_band,home_ownership_grp,verification_status,emp_length_bucket,n,default_rate
+High-Risk Archetype,F,30+,RENT,Verified,7-9 years,60,0.8166666666666667
+Low-Risk Archetype,A,<10,OWN,Source Verified,< 1 year,78,0.01282051282051282

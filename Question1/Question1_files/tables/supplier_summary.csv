@@ -1,0 +1,424 @@
+roaster,loc_country,n_coffees,avg_flavour,avg_rating,avg_price
+1951 Coffee Company,United States,1,0.55,92,6.03
+1980 CAFE,Taiwan,5,0.63,92,6.34
+3-19 Coffee,United States,1,0.55,90,5.29
+4 Plus Coffee,Taiwan,1,0.55,91,9.67
+421 Brew House,Canada,2,0.525,88,5
+709 Boutique Coffee,Taiwan,1,0.75,93,7.2
+94 Fresh Coffee,Taiwan,8,0.6125,93.75,8.395
+A&E Coffee & Tea,United States,3,0.6333333333333333,92.33333333333333,5.093333333333334
+A.R.C.,Hong Kong,6,0.5666666666666667,93.16666666666667,9.43
+AKA Coffee Roasters,Taiwan,1,0.55,93,7.33
+Aether Coffee,United States,1,0.5,93,4.4
+Allegro Coffee,United States,1,0.45,94,4.11
+Allegro Coffee Roasters,United States,1,0.6,90,4.41
+Amavida Coffee Roasters,United States,16,0.621875,92.9375,6.439375
+Argyle Coffee Roasters,United States,2,0.75,92.5,5.29
+Atom Coffee Roasters,Taiwan,7,0.5785714285714285,93,5.812857142857143
+Atomic Coffee Roasters,United States,2,0.7,93,5.29
+Augie's Coffee Roasters,United States,1,0.6,93,5.29
+Auto Coffee,Taiwan,2,0.55,92,3.7199999999999998
+BLK & Bold,United States,1,0.7,94,4.12
+Ba Yang Coffee,Taiwan,2,0.525,92,1.6949999999999998
+Baba Java Coffee,United States,7,0.6214285714285714,91.85714285714286,8.63
+Back Home Coffee,Taiwan,1,0.5,90,5.92
+Badbeard’s Microroastery,United States,2,0.65,93,3.96
+Balmy Day Coffee Office,Taiwan,1,0.65,92,9.04
+Barefoot Coffee Roasters,United States,1,0.5,90,0.12
+Bargain Cafe,Taiwan,3,0.7,92,5.95
+Barrington Coffee Roasting,United States,20,0.625,93.45,8.1555
+Barrington Coffee Roasting Co.,United States,1,0.6,94,11.6
+Bassline Coffee,United States,1,0.7,93,7.41
+Battle Creek Coffee Roasters,United States,1,0.5,92,4.7
+Battlecreek Coffee,United States,1,0.35,91,5.88
+Battlecreek Coffee Roasters,United States,1,0.65,93,5.29
+Beachcomber Coffee,Canada,1,0.55,92,4.2
+BeanFruit Coffee Co.,United States,3,0.7,93.66666666666667,4.8
+Beanfruit Coffee Co.,United States,1,0.65,91,4.7
+Ben's Beans,United States,2,0.675,92.5,4.98
+Big Creek Coffee Roasters,United States,12,0.6416666666666666,92.41666666666667,4.691666666666666
+Big Island Coffee Roasters,Hawai'i,10,0.64,93.6,13.72
+Big Shoulders Coffee,United States,26,0.6576923076923077,93.23076923076923,7.823076923076923
+Bird Rock Coffee Roasters,United States,41,0.651219512195122,94.14634146341463,14.092439024390243
+Black & White Coffee Roasters,United States,1,0.7,93,5.88
+Black Coffee In Black Jar,Taiwan,4,0.6875,92,32
+Black Oak Coffee Roasters,United States,2,0.675,93,5.14
+Blanchard's Coffee,United States,1,0.7,93,5.31
+Bluebeard Coffee Roasters,United States,2,0.6000000000000001,92.5,5.145
+Blues Brew Coffee,Taiwan,4,0.6625,93,15.425
+Bona Kafo Roastery,Taiwan,2,0.6000000000000001,94,43.825
+Bonfire Coffee Company,United States,1,0.45,94,1.34
+Boon Boona Coffee,United States,1,0.75,95,5.88
+Bootstrap Coffee Roasters,United States,1,0.45,87,4.41
+Brain Helmet,United States,2,0.625,91.5,5.585
+Branch Street Coffee Roasters,United States,5,0.66,94,5.986000000000001
+Brand 425,United States,1,0.6,91,4.19
+Bridge Coffee Co.,United States,1,0.55,92,5.88
+Brioso Coffee,United States,1,0.65,94,8.82
+Broadsheet Coffee,United States,1,0.6,92,6.17
+Buon Caffe,Taiwan,5,0.64,93,6.554
+Cafe Arles,Taiwan,1,0.55,87,3.91
+Cafe Douceur,Taiwan,1,0.7,94,6.51
+Cafe Femenino,United States,1,0.55,90,4.11
+Cafe Fugu Roasters,Taiwan,2,0.525,92,8.4
+Cafe Grumpy,United States,4,0.625,92.5,6.465
+Cafe Kreyol,United States,15,0.6033333333333334,92.13333333333334,6.1386666666666665
+Cafe Red Bean Shop,Taiwan,3,0.5833333333333334,94.33333333333333,9.3966666666666665
+Cafe Unido,United States,1,0.5,95,23.52
+Cafe Virtuoso,United States,3,0.7166666666666667,94,9.6
+CafeTaster,Taiwan,4,0.55,93.5,9.8475
+Caffe Luxxe,United States,4,0.6375,92.75,13.815000000000001
+Caffeic,United States,4,0.6875,92.25,4.08
+Café Chiayi J11,Taiwan,1,0.5,93,5.36
+Café Grumpy,United States,1,0.75,94,6.47
+Café Hubert Saint-Jean,Canada,1,0.35,92,5.73
+Cameron’s Coffee,United States,1,0.5,89,1.54
+Campos Coffee,Australia,2,0.6,95.5,42.78
+Chaos Coffee Company,United States,2,0.575,93,4.26
+Charlotte Coffee Company,United States,2,0.47500000000000003,93,4.41
+Cheer Beans,Taiwan,1,0.55,92,6.34
+Chez Cafe,Taiwan,1,0.65,93,4.8
+Chiming Coffee,Taiwan,2,0.65,91.5,12.8
+Chocolate Fish Coffee Roasters,United States,3,0.6,93,5.24
+Choosy Gourmet,Taiwan,3,0.5,92,3.8766666666666665
+Chousin Coffee Collection,Taiwan,2,0.675,92.5,6.725
+Chromatic Coffee,United States,3,0.6166666666666667,93.66666666666667,33.626666666666665
+Chu Bei,China,2,0.45,93,10.355
+Cloud City Coffee,United States,2,0.675,92.5,5.29
+Coava Coffee Roasters,United States,1,0.65,92,4.26
+CofFeeling,Taiwan,5,0.55,92.6,5.4399999999999995
+Coffee By Design,United States,7,0.6571428571428571,92.28571428571429,4.792857142857143
+Coffee Hound,United States,2,0.625,91,4.11
+Coffee Please,Taiwan,15,0.5933333333333334,93.8,6.846
+Coffee by Design,United States,5,0.68,92.8,5.578
+Coffeebar,United States,2,0.675,93,5.88
+Colibrije Specialty Coffee,Mexico,1,0.5,91,5.73
+Collage Coffee,United States,6,0.6166666666666667,93,5.333333333333333
+Conscious Cup Coffee Roasters,United States,5,0.6799999999999999,93.2,6.93
+Corvus Coffee Roasters,United States,10,0.645,92.8,5.4079999999999995
+Counter Culture Coffee,United States,1,0.6,93,4.41
+Cozy House Coffee,Taiwan,10,0.62,93.9,5.497
+Creation Food Co.,Taiwan,5,0.53,91.2,4.367999999999999
+Crown & Fancy,Taiwan,1,0.55,92,5.36
+Cup to Cup Coffee Roasters,United States,1,0.55,93,3.53
+Dante Coffee,Taiwan,1,0.45,92,4.8
+Dapper & Wise,United States,1,0.6,92,5.88
+David's Nose,Taiwan,10,0.595,92.9,5.59
+De Clieu Coffee,Taiwan,6,0.5666666666666667,92.66666666666667,6.4399999999999995
+Dear John Coffee,Taiwan,1,0.5,91,3.24
+Deeper Roots Coffee,United States,1,0.65,91,7.35
+Desert Sun Coffee Roasters,United States,2,0.6,91.5,4.555
+Desolate Cafe,Taiwan,6,0.5083333333333333,93.33333333333333,7.048333333333333
+Desolate Café,Taiwan,3,0.6666666666666666,92,7.5200000000000005
+Detour Coffee Roasters,Canada,1,0.6,92,4.5
+Difference Coffee,England,6,0.5666666666666667,94.33333333333333,104.07333333333334
+Dinwei Cafe,Taiwan,1,0.4,92,16.7
+Direct Coffee,Taiwan,3,0.6333333333333333,93,18.306666666666665
+DoDo Kaffa,Taiwan,2,0.65,94,8.175
+Doho Coffee Roasters,Taiwan,1,0.65,92,4.57
+Doi Chaang Coffee,Canada,1,0.5,91,2.4
+Dory Coffee Roasters,Taiwan,5,0.55,93.2,8.234
+Dou Zhai Coffee & Roast,Taiwan,2,0.55,94,12.8
+Dr. Bean's Coffee Roasters,United States,1,0.7,92,13.52
+Dr. Young Cafe,Taiwan,1,0.8,93,9.91
+Dragonfly Coffee Roasters,United States,37,0.6783783783783783,94.1891891891892,16.336486486486486
+Drink Coffee Do Stuff,United States,5,0.6,93,6.524
+Duluth Coffee,United States,1,0.45,91,9.92
+Durango Coffee Companuy,United States,1,0.7,94,5.57
+Durango Coffee Company,United States,19,0.6131578947368421,93.10526315789474,5.348947368421053
+Dávila Kafe,United States,3,0.6333333333333333,92,6.17
+EK Roast Studio,Taiwan,2,0.6499999999999999,93.5,7.965
+Eagle Valley Coffee,Taiwan,1,0.55,92,3.52
+Eight O'Clock Coffee,United States,1,0.55,88,1.49
+El Gran Cafe,Guatemala,21,0.6261904761904762,90.95238095238095,3.6666666666666665
+El Gran Café,Guatemala,8,0.575,90.5,3.50875
+Emiliani Coffee,United States,3,0.5833333333333334,91,4.28
+Equator Coffees,United States,14,0.6214285714285714,93.71428571428571,15.525
+Equator Coffees & Teas,United States,2,0.575,94,29.765
+Equiano Coffee,United States,2,0.65,94,5.29
+Espresso Republic,United States,11,0.6,90.54545454545455,4.692727272727272
+Euphora,Taiwan,1,0.55,93,2.2
+Euphora Coffee,Taiwan,12,0.6375,93.33333333333333,11.46
+Evans Brothers Coffee Roasters,United States,1,0.65,93,4.85
+Evie's Cafe,Taiwan,8,0.6,93.25,5.7212499999999995
+Evie’s Cafe,Taiwan,1,0.65,94,5.66
+Felala Coffee Lab,Taiwan,1,0.7,95,5.1
+Fidalgo Coffee,United States,1,0.7,92,4.7
+Fieldheads Coffee Roasting,United States,1,0.55,93,3.82
+Finca Las Nieves,Mexico,1,0.75,94,15.43
+Finca Tasta,Peru,2,0.675,93,4
+Fire Ridge Coffee,United States,1,0.5,93,5.29
+Flight Coffee Co.,United States,8,0.66875,94,4.81375
+Flower Coffee Workshop,Taiwan,2,0.575,92.5,5.199999999999999
+Foggy Hills Coffee Company,United States,1,0.7,91,5.95
+Folklore Coffee,United States,1,0.65,92,7.35
+Folly Coffee Roasters,United States,1,0.55,94,5.57
+Forest Roasting,Taiwan,2,0.525,92.5,3.59
+Fresh Roasted Coffee,United States,3,0.5833333333333334,92,4.59
+Fumi Coffee,Taiwan,5,0.65,93.2,12.112
+Fumi Coffee Company,Taiwan,3,0.6333333333333333,93.33333333333333,7.946666666666666
+GK Coffee,Taiwan,36,0.6027777777777777,94.25,11.44111111111111
+Geisha Coffee Roaster,United States,1,0.45,93,3.25
+Genesis Coffee Lab,United States,2,0.6,95.5,75.62
+Ghost Town Coffee Roasters,United States,1,0.6,92,4.48
+Giv COFFEE,United States,1,0.65,93,6.17
+Golin Coffee Roasters,Taiwan,3,0.6333333333333333,92.33333333333333,7.466666666666667
+Good Chance Biotechnology,Taiwan,1,0.7,93,90.83
+"Good Chance Biotechnology, Ltd.",Taiwan,4,0.7,93.25,90.83
+Good Coffee Club,United States,1,0.65,92,4.41
+Good Folks Coffee,United States,1,0.7,95,6.47
+Gorilla Conservation Coffee,Uganda,1,0.65,92,3.96
+Gracenote Coffee Roasters,United States,2,0.65,93.5,5.4350000000000005
+Greater Goods Coffee Roasters,United States,7,0.65,93.57142857142857,5.372857142857143
+Green Stone Coffee,Taiwan,11,0.6681818181818182,93.45454545454545,9.200909090909091
+Greenwell Farms,Hawai'i,1,0.6,90,22.05
+Grounds for Change,United States,2,0.7,92,3.4699999999999998
+Guorizi Zhai Coffee,Taiwan,1,0.55,93,6.61
+HT Traders,United States,1,0.55,89,1.47
+HWC Roasters,Taiwan,3,0.5166666666666667,92,9.883333333333333
+Hala Tree Kona Coffee,Hawai'i,12,0.6625,93.16666666666667,14.605
+Hale Coffee Company,Canada,1,0.7,93,5.62
+Handlebar Coffee,United States,1,0.65,93,5.88
+Hatch Coffee,Canada,1,0.6,92,10.87
+Hey Brown,Taiwan,1,0.65,93,5.69
+Hidden Coffee HK,Hong Kong,2,0.6,92,28.47
+Highwire Coffee Roasters,United States,3,0.65,93.33333333333333,5.3133333333333335
+Hill's Bros. Coffee,United States,1,0.55,87,0.99
+Ho Soo Tsai,Taiwan,1,0.7,95,7.94
+Home in Harmony,Taiwan,3,0.6333333333333333,93.66666666666667,5.166666666666666
+Hsus Cafe,Taiwan,1,0.45,93,4.25
+Hub Coffee Roasters,United States,2,0.65,91,5.51
+Hula Daddy Kona Coffee,Hawai'i,24,0.6104166666666667,95.125,24.78
+ILSE Coffee Roasters,United States,1,0.6,93,6.91
+Indaba Coffee Roasters,United States,11,0.6227272727272727,92,5.275454545454545
+Islamorada Coffee Roasters,United States,1,0.65,91,5.88
+JBC Coffee Roasters,United States,159,0.6194968553459119,93.59748427672956,6.418867924528302
+JYL Cafe,Taiwan,1,0.6,95,8.32
+Jackrabbit Java,United States,23,0.6043478260869565,92.21739130434783,4.929565217391304
+Jade Cafe,Taiwan,1,0.65,93,8.53
+Jampot Poorock Abbey,United States,2,0.575,90.5,7.275
+Jampot Poorrock Abbey,United States,2,0.5,91.5,7.275
+Japanese Coffee Co.,Japan,1,0.45,91,14.11
+Jaunt Coffee Roasters,United States,19,0.6131578947368421,92.94736842105263,7.827368421052632
+Java Blend Coffee Roasters,Canada,1,0.65,92,3.31
+Joe Van Gogh,United States,1,0.5,90,4.11
+Joe Van Gogh Coffee,United States,1,0.65,94,14.11
+Ka'u Specialty Coffee,Hawai'i,2,0.7,91.5,13
+Kafe 1804,United States,2,0.5,87,6.025
+Kaffetre,Taiwan,1,0.65,94,6.61
+Kahawa 1893,United States,1,0.6,92,4.69
+Kakalove Cafe,Taiwan,141,0.625531914893617,94.16312056737588,6.515106382978724
+Kakalove Café,Taiwan,1,0.6,96,21.24
+Kaldi's Coffee,United States,1,0.6,93,5.29
+Kasasagi Coffee Roasters,Taiwan,3,0.5666666666666667,93,8.266666666666667
+Kauai Coffee Company,Hawai'i,2,0.55,91,19.4
+King's Gambit Coffee,United States,1,0.5,88,6.17
+Klatch Coffee,United States,12,0.6375,93.75,12.031666666666666
+Kona Farm Direct,Hawai'i,8,0.55625,92.625,21.02875
+Kona Love Coffee Co.,Hawai'i,4,0.5625,91.25,9.555
+Kona Roasted,Hawai'i,3,0.7,91.66666666666667,10.286666666666667
+Kona View Coffee,Hawai'i,1,0.6,93,10.14
+LECO Coffee,Taiwan,4,0.6125,92.75,7.05
+Lamppost Coffee Roasters,United States,1,0.6,92,4.41
+Larry's Coffee,United States,1,0.6,92,4.11
+Le Brewlife,Taiwan,6,0.5916666666666667,92.33333333333333,17.628333333333334
+Level Ground Trading,Canada,1,0.4,92,2.82
+Lexington Coffee Roasters,United States,16,0.659375,93,5.651875
+Lin's Home Roasters,Taiwan,1,0.6,90,8.46
+Lina Premium Coffee,United States,5,0.58,91.6,6.248
+Lone Coffee,United States,4,0.675,90.75,5.5125
+Lucky Cafe,Taiwan,2,0.55,92.5,14.21
+Luv Moshi,Taiwan,3,0.6666666666666666,92.66666666666667,5.693333333333333
+MJ Bear Coffee,Taiwan,1,0.85,94,4.96
+MK Coffee Roasters,Taiwan,3,0.55,92.66666666666667,7.346666666666667
+MT49 Cafe,Taiwan,2,0.625,91.5,7.135
+Madness Roastworks,Malaysia,3,0.6,92.33333333333333,8.106666666666666
+Magnolia Coffee,United States,13,0.5884615384615385,93.15384615384616,5.720769230769231
+Mamechamame Coffee,Japan,1,0.55,93,7.56
+Manzanita Roasting Company,United States,2,0.725,92.5,5.145
+Merge Coffee Company,United States,9,0.6222222222222222,93.44444444444444,5.68
+Metropolis Coffee,United States,3,0.55,91.66666666666667,3.776666666666667
+Mi's Cafe,Taiwan,2,0.575,93.5,4.25
+Min Enjoy Cafe,Taiwan,2,0.5,93,6.890000000000001
+Ming's Coffee Playroom,Taiwan,1,0.6,93,6.4
+Miranda Farms,Hawai'i,1,0.65,94,13.23
+Modern Times Coffee,United States,4,0.6,92.75,4.8475
+Monarch Coffee,Hawai'i,3,0.6333333333333333,92.33333333333333,28.203333333333333
+Montana Coffee Traders,United States,1,0.6,93,3.7
+Mooju Coffee,United States,1,0.5,85,4.41
+MoonMoon Coffee,Taiwan,2,0.575,94.5,4.43
+Moore Coffee,United States,2,0.675,94.5,5.380000000000001
+Mostra Coffee,United States,9,0.5944444444444444,93.33333333333333,10.20111111111111
+Mr. Chao Coffee,Taiwan,5,0.5800000000000001,92,3.384
+Mr. Espresso,United States,4,0.5875,91.5,4.5925
+Mudhouse Coffee Roasters,United States,1,0.65,94,22.05
+Muka Coffee,Taiwan,2,0.675,92.5,3.37
+Mustard Seed Cafe,Taiwan,1,0.55,92,9.16
+Mute Roaster,China,2,0.55,92.5,42.095
+Mystic Monk Coffee,United States,9,0.6388888888888888,91,4.108888888888889
+NINETYs Roastery,Hong Kong,2,0.6,94,7.67
+Nine Point Coffee,Taiwan,2,0.65,93,14.355
+Noble Coffee Roasting,United States,2,0.525,92.5,6.025
+Nook Bakery & Coffee Bar,United States,1,0.65,91,5.64
+Normandy Coffee Thai Cuisine,Taiwan,1,0.65,94,4.25
+North Coast Coffee Roasting,United States,1,0.65,90,4.76
+Nostalgia Coffee Roasters,United States,18,0.6166666666666667,93.5,9.348888888888888
+Notch Coffee,Canada,1,0.65,94,3.97
+Novel Coffee Roasters,United States,1,0.55,91,5.29
+Novo Coffee,United States,1,0.75,92,4.41
+Novo Coffee Roasters,United States,1,0.65,93,5.58
+OQ Coffee Co.,United States,1,0.65,93,12.35
+Oak & Bond Coffee Company,United States,6,0.6583333333333333,93,5.336666666666667
+Oceana Coffee,United States,4,0.65,92.25,6.175
+Old Soul Co.,United States,8,0.61875,92.25,7.1825
+Old World Coffee Lab,United States,8,0.6,92.25,6.08125
+Olympia Coffee,United States,1,0.65,93,6.61
+Olympia Coffee Roasting,United States,3,0.65,93,5.083333333333333
+Omine Coffee,Taiwan,1,0.65,94,16
+One Fresh Cup,Taiwan,1,0.5,95,8.44
+Open Seas Coffee,United States,1,0.6,91,6.72
+Origin Coffee Roasters,Hawai'i,6,0.7,93.33333333333333,11.955
+Oughtred Roasting Works,Canada,1,0.65,92,2.65
+PT's Coffee Roasting,United States,7,0.6285714285714286,93.85714285714286,13.291428571428572
+PT's Coffee Roasting Co.,United States,16,0.584375,94.4375,12.084375
+PT’s Coffee Roasting Co.,United States,1,0.5,95,6.47
+Pamma Coffee,Taiwan,1,0.35,91,2.48
+Paradise Roasters,United States,135,0.5951851851851852,93.54074074074074,17.654592592592593
+Peach Coffee Roasters,United States,17,0.5823529411764706,92.82352941176471,6.734117647058824
+Peacock Coffee Roaster,Taiwan,2,0.6499999999999999,94,6.4
+Pedestrian Coffee,United States,1,0.65,93,5.29
+Peet's Coffee,United States,3,0.48333333333333334,88.33333333333333,3.533333333333333
+Per'la Specialty Roasters,United States,3,0.6,92.33333333333333,5.78
+Peri Coffee,United States,1,0.7,93,5.73
+Per’la Specialty Roasters,United States,1,0.65,95,7.05
+Plat Coffee Roastery,Hong Kong,10,0.575,93,13.759
+Pop Coffee Works,Canada,2,0.525,93,5.915
+Port of Mokha,United States,2,0.55,95,33.95
+Portrait Coffee,United States,1,0.65,94,5.29
+Prairie Lily Coffee,Canada,2,0.6000000000000001,93.5,16.125
+Press Coffee,United States,2,0.6000000000000001,93.5,6.609999999999999
+Press House Coffee,United States,2,0.55,92,5.54
+Pro Aroma Enterprise Coffee,Taiwan,5,0.6,93.8,8.172
+Propeller Coffee,Canada,10,0.61,93,4.316
+Q Burger,Taiwan,1,0.45,91,1.97
+Qima Coffee,England,1,0.55,93,20.83
+Qin Mi Coffee,Taiwan,1,0.7,92,9.16
+Quartet Kaffe,Taiwan,12,0.6291666666666667,93.83333333333333,11.076666666666666
+RD Cafe,Taiwan,2,0.675,95,4.8149999999999995
+RND,United States,1,0.6,92,5.58
+RND & Red Rooster Coffee Roaster,United States,1,0.7,94,5.88
+Raggiana Coffee,United States,1,0.55,92,4.7
+RamsHead Coffee Roasters,United States,36,0.6069444444444444,92.69444444444444,5.796666666666667
+Ramshead Coffee Roasters,United States,2,0.575,95,5.65
+RanGuo Coffee,Taiwan,1,0.65,91,5.64
+Red Bay Coffee,United States,1,0.55,92,5.58
+Red Bean Coffee,Taiwan,2,0.6499999999999999,92.5,12
+Red E Café,United States,1,0.95,93,4.7
+Red Rock Roasters,United States,3,0.6333333333333333,92.33333333333333,4.383333333333334
+Red Rooster Coffee Roaster,United States,40,0.625,93.95,5.7
+Regent Coffee,United States,4,0.5875,93.25,6.6850000000000005
+Rest Coffee Roasters,Taiwan,1,0.6,93,9.46
+Reunion Island Coffee,Canada,2,0.675,93.5,3.76
+Revel Coffee,United States,18,0.6444444444444445,93.11111111111111,5.9494444444444445
+Rhetoric Coffee,United States,3,0.5833333333333334,91.66666666666667,3.87
+Roadmap CoffeeWorks,United States,12,0.6166666666666667,93.66666666666667,6.144166666666667
+Roadmap Coffeeworks,Kenya,1,0.6,94,6.91
+Roadmap Coffeeworks,United States,1,0.65,93,7.05
+Roast House,United States,3,0.6666666666666666,92.33333333333333,5.39
+Roasters Note,Taiwan,1,0.75,94,6.51
+Rooster Roastery,Hawai'i,1,0.6,84,11.02
+Rotate Fun Club,Taiwan,1,0.55,91,8.53
+Rubasse Coffee Roaster,Taiwan,1,0.7,92,11.95
+Rusty Dog Coffee,United States,2,0.6,93,5.365
+Rusty's Hawaiian,Hawai'i,5,0.63,93.2,12.566
+Rusty's Hawaiian Coffee,Hawai'i,1,0.7,93,12.35
+Rusty’s Hawaiian,Hawai'i,1,0.5,95,22.05
+SOT Coffee Roaster,Japan,4,0.6124999999999999,95,20.740000000000002
+Samlin Coffee,Taiwan,2,0.675,93,7.04
+San Francisco Bay Coffee,United States,9,0.5888888888888889,90.11111111111111,4.588888888888889
+San Francisco Bay Coffee Company,United States,1,0.55,95,13.52
+Santos Coffee,Hawai'i,2,0.6000000000000001,93.5,3.915
+Satur Specialty Coffee,Taiwan,3,0.6333333333333333,93.33333333333333,5.733333333333333
+Sightseer Coffee,United States,1,0.6,92,5.88
+Signature Reserve,United States,1,0.6,90,3.32
+Simon Hsieh Aroma Roast Coffees,Taiwan,11,0.5045454545454545,94.63636363636364,22.78090909090909
+Simon Hsieh's Aroma Roast Coffees,Taiwan,4,0.5125,94,10.7975
+Simon Hsieh’s Aroma Roast Coffees,Taiwan,7,0.5428571428571429,94.28571428571429,15.17
+Singsun Coffee,Taiwan,2,0.625,93.5,13.23
+Sip of Hope Community Coffee Roasters,United States,1,0.55,92,5.29
+SkyTop Coffee,United States,16,0.59375,92.875,5.88875
+Small Eyes Cafe,Taiwan,17,0.6058823529411764,93.29411764705883,7.355882352941176
+Small Eyes Café,Taiwan,1,0.6,95,4.96
+Soul Work Coffee,United States,4,0.625,91.75,6.355
+South Slope Coffee Roasters,United States,1,0.65,92,5.29
+Southeastern Roastery,United States,1,0.65,93,5.29
+Souvenir Coffee,United States,4,0.575,93.25,5.51
+Speckled Ax,United States,5,0.67,92.8,6.116
+Speedwell Coffee,United States,2,0.55,92,4.85
+Spirit Animal Coffee,Honduras,1,0.6,92,11.46
+Spix's Cafe,Taiwan,1,0.65,93,4.81
+St1 Cafe/Work Room,Taiwan,2,0.625,93.5,9.225
+Starbucks Coffee,United States,3,0.4666666666666667,87,3.276666666666667
+States Coffee,United States,6,0.5833333333333334,93.5,5.29
+States Coffee & Mercantile,United States,6,0.6,93.33333333333333,5.29
+Steadfast Coffee,United States,1,0.65,92,6.76
+Steady State Roasting,United States,2,0.55,93.5,7.79
+Steady State Roasting Company,United States,5,0.67,92.8,6.67
+Stereo Coffee Roasters,Canada,2,0.7250000000000001,94,5.265000000000001
+Succulent Coffee Roasters,United States,1,0.6,93,5
+Sunny's Coffee,Japan,6,0.6083333333333334,91.5,9.05
+Sweet Bloom Coffee Roasters,United States,1,0.75,93,5.88
+Swelter Coffee,United States,1,0.55,93,5.29
+T.S.E. Custom Roastery,Taiwan,1,0.7,94,4.93
+Tandem Coffee,United States,1,0.6,93,5.29
+Taokas Coffee,Taiwan,1,0.65,95,6.02
+Taster's Coffee,Taiwan,6,0.5666666666666667,93.5,6.6066666666666665
+Taster’s Coffee,Taiwan,2,0.625,95,18.83
+Tehmag Foods Corporation,Taiwan,1,0.4,92,2.68
+Telluride Coffee Roasters,United States,2,0.5,88,3.875
+Temple Coffee,United States,6,0.6583333333333333,93.16666666666667,6.395
+Temple Coffee Roasters,United States,42,0.6154761904761905,92.85714285714286,5.968333333333334
+Temple Coffee and Tea,United States,17,0.6470588235294118,92.47058823529412,7.27
+Thanksgiving Coffee Company,United States,4,0.575,93,6.54
+The Angry Roaster,Canada,1,0.8,94,9
+The Curve Coffee Roasting,Taiwan,1,0.4,92,3.47
+The Curve Coffee Roasting Co.,Taiwan,2,0.575,94,7.4350000000000005
+The Formosa Coffee,United States,1,0.6,92,8.81
+The Reverse Orangutan,United States,1,0.65,93,6.47
+The WestBean Coffee Roasters,United States,3,0.5666666666666667,92,6.463333333333333
+Theory Coffee Roasters,United States,1,0.6,94,24.25
+Three Chairs Specialty Turkish Coffee,United States,1,0.65,92,14.11
+Three Keys Coffee,United States,4,0.5875,92.5,5.585
+Tico Coffee Roasters,United States,2,0.725,92,5.88
+Tipico Coffee,United States,3,0.65,93.33333333333333,6.053333333333333
+Toca Coffee,United States,1,0.55,91,4.69
+Tony's Coffee,United States,2,0.575,92,3.9699999999999998
+Topeca Coffee Roasters,United States,3,0.5333333333333333,92.33333333333333,4.6000000000000005
+Treeman Coffee,Taiwan,2,0.45,92,4.8
+Tribo Coffee,Taiwan,1,0.5,91,5
+Trident Coffee,United States,2,0.47500000000000003,91,5.28
+Triple Coffee Co.,United States,1,0.65,93,8.82
+True Coffee Roasters,United States,3,0.6166666666666667,92,3.85
+Tug Hill Artisan Roasters,United States,1,0.65,91,4.59
+Turnstile Coffee Roasters,United States,1,0.65,94,6.61
+VERYTIME,Taiwan,7,0.5714285714285714,92.85714285714286,6.877142857142857
+VN Beans,United States,1,0.55,93,6.47
+Valverde Coffee Roasters,United States,1,0.65,92,5.64
+Vascobelo,Belgium,1,0.4,90,3.02
+Vennel Coffee,Taiwan,3,0.6166666666666667,94,8.456666666666667
+Vermont Artisan Coffee & Tea,United States,1,0.65,94,5.29
+Vienna Coffee Company,United States,2,0.575,91.5,4.775
+Vivid Coffee,United States,1,0.55,92,6.61
+Volcanica Coffee,United States,1,0.8,94,3.97
+Warm Air Kafe,Taiwan,4,0.575,92.75,4.87
+Water Avenue Coffee,United States,1,0.7,94,4.12
+Water Street Coffee,United States,1,0.65,91,4.91
+Wheelys Cafe Taiwan,Taiwan,2,0.45,91.5,6.21
+Wheelys Café Taiwan,Taiwan,1,0.6,93,6.08
+Wild Goose Coffee Roasters,United States,1,0.75,92,5.29
+Wildgoose Coffee Roasters,United States,1,0.75,93,6.17
+Willoughby's Coffee & Tea,United States,17,0.6264705882352941,93.58823529411765,12.122352941176471
+Wonderstate Coffee,United States,12,0.6333333333333333,92.75,5.975833333333333
+Yellow Brick Coffee,United States,2,0.6,93.5,5.585
+inLove Cafe,Taiwan,1,0.6,92,12.63
+modcup coffee,United States,17,0.5735294117647058,93.70588235294117,11.359411764705882
