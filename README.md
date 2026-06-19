@@ -121,9 +121,7 @@ shell(sprintf('mklink /J "%s" "%s"',
 > **Status note:** Questions 1, 3 and 4 currently use the original
 > single-file-per-concern `code/` layout shown above. Question 2 has
 > been migrated to the fully modular, functional-programming structure
-> described below, since it had a lot of moving pieces to easily manage debuging; the other
-> three questions will be updated to match in due course. This README
-> will be expanded with their detailed approaches once that happens.
+> described below, since it had a lot of moving pieces to easily manage debuging.
 
 ------------------------------------------------------------------------
 
