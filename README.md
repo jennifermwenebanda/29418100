@@ -1,8 +1,7 @@
 # 29418100 — Data Science Practical Examination
 
 **Author:** Jennifer Mwenebanda<br> **Student number:** 29418100<br>
-**Date:** 19 June 2026<br> **Lecturer:** NF Katzke \| **Moderator:**
-Prof. D.P. von Fintel
+**Date:** 19 June 2026<br> **Lecturer:** NF Katzke 
 
 ------------------------------------------------------------------------
 
@@ -23,9 +22,7 @@ fully self-contained RStudio project (its own `.Rproj`, `.Rmd`, `code/`,
 disk.
 
 All data wrangling, analysis and plotting logic lives in small,
-single-purpose functions inside each question’s own `code/` folder —
-never inline in the `.Rmd` body — in keeping with the
-**functional-programming paradigm** required for this exam. Each
+single-purpose functions inside each question’s own `code/as required for this exam. Each
 question’s `.Rmd` sources its functions (directly, or via a master
 script) and only ever calls them; raw computation never appears in the
 report body itself. Output (PowerPoint slides, paged HTML reports, and
