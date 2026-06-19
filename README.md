@@ -1,13 +1,133 @@
-# Purpose
+# 29418100 — Data Science Practical Examination
 
-This is the root README for the Data Science Practical Exam, student
-number 29418100. Each question lives in its own self-contained folder
-(`Question#/`, with its own `.Rproj`, `.Rmd`, `code/` and a `data/`
-junction that is not committed to git). This file pulls the three most
-important figures and a key results table out of each question’s own
-report, together with a short overview of the approach, the headline
-result, and a one-line recommendation. For the full analysis, knit
-`Question#/Question#.Rmd` directly inside that question’s own project.
+**Author:** Jennifer Mwenebanda<br> **Student number:** 29418100<br>
+**Date:** 19 June 2026<br> **Lecturer:** NF Katzke 
+
+------------------------------------------------------------------------
+
+## Purpose and Structure
+
+The purpose of this README is to explain my reasoning and process for
+answering each question in the Data Science Practical Exam, and to
+document the project’s folder structure so that any question can be
+opened and reproduced independently.
+
+The raw data supplied for the exam lives in the Exam Folder’s top-level
+`Data/` directory. None of it is copied: a Windows directory junction
+(`mklink /J`) links the project’s root `data/` folder to `../Data/`, and
+each question’s own `data/<dataset>` subfolder is in turn junctioned to
+the relevant dataset inside `Data/`. This means every question is a
+fully self-contained RStudio project (its own `.Rproj`, `.Rmd`, `code/`,
+`Tex/`, `Template/`) without a single byte of data being duplicated on
+disk.
+
+All data wrangling, analysis and plotting logic lives in small,
+single-purpose functions inside each question’s own `code/as required for this exam. Each
+question’s `.Rmd` sources its functions (directly, or via a master
+script) and only ever calls them; raw computation never appears in the
+report body itself. Output (PowerPoint slides, paged HTML reports, and
+any persisted figures/tables backing them) is written into that
+question’s own `Question#_files/` folder.
+
+------------------------------------------------------------------------
+
+## Getting Started
+
+The exam project and its four question sub-projects were created as
+follows (run once, from the Exam Folder), mirroring the structure of the
+supplied `Mock_Solution` template with `STUDENTNUMBER` replaced by
+`29418100`:
+
+``` r
+library(tidyverse)
+
+student_number <- "29418100"
+exam_dir    <- "C:/Users/JENNIFER/OneDrive - Stellenbosch University/MCom 2026/First Semester/Data Science/Exam Folder"
+project_dir <- file.path(exam_dir, student_number)
+
+dir.create(project_dir, showWarnings = FALSE)
+
+# Root .Rproj
+writeLines(
+  c("Version: 1.0", "RestoreWorkspace: Default", "SaveWorkspace: Default",
+    "AlwaysSaveHistory: Default", "EnableCodeIndexing: Yes", "UseSpacesForTab: Yes",
+    "NumSpacesForTab: 2", "Encoding: UTF-8", "RnwWeave: Sweave", "LaTeX: pdfLaTeX",
+    paste0("ProjectName: ", student_number)),
+  file.path(project_dir, paste0(student_number, ".Rproj"))
+)
+
+# Junction the root data/ folder to the Exam Folder's Data/ (no copy)
+shell(sprintf('mklink /J "%s" "%s"',
+              file.path(project_dir, "data"), file.path(exam_dir, "Data")))
+
+# Each Question# folder mirrors Mock_Solution/Mock_Solution (.Rproj, .Rmd, code/,
+# Tex/, Template/, Question#_files/), with its own data/<dataset> folder junctioned
+# to the matching subfolder of Data/ — e.g. for Question 2 (US Baby Names):
+shell(sprintf('mklink /J "%s" "%s"',
+              file.path(project_dir, "Question2", "data", "US_Baby_names"),
+              file.path(exam_dir, "Data", "US_Baby_names")))
+```
+
+------------------------------------------------------------------------
+
+## Folder Structure
+
+    29418100/
+    ├── 29418100.Rproj
+    ├── README.Rmd          ← this file (root summary)
+    ├── .gitignore          ← excludes data/ and output artefacts
+    ├── data/               ← junction to ../Data/ (not committed)
+    │
+    ├── Question1/          ← Coffee Hub (PowerPoint output)
+    │   ├── Question1.Rmd
+    │   ├── code/
+    │   │   ├── load_coffee.R      (CSV loader with encoding fallback)
+    │   │   └── plot_coffee.R      (rating, origin, price-vs-rating, top-roasters)
+    │   ├── data/Coffee/           (junction — not committed)
+    │   └── Tex/
+    │
+    ├── Question2/          ← US Baby Naming Trends (paged HTML) — UPDATED, see below
+    │   ├── Question2.Rmd
+    │   ├── code/
+    │   │   ├── run_project.R          (master orchestrator — sourced by Question2.Rmd)
+    │   │   ├── utils/                 (packages.R, paths.R, helpers.R, save_outputs.R)
+    │   │   ├── data/                  (load_data.R, clean_data.R)
+    │   │   ├── analysis/              (naming_persistence.R, era_comparison.R,
+    │   │   │                            popularity_spikes.R, billboard_influence.R,
+    │   │   │                            hbo_influence.R, one_hit_wonders.R)
+    │   │   └── visualisation/         (persistence_plots.R, spike_plots.R,
+    │   │                                billboard_plots.R, hbo_plots.R)
+    │   ├── data/US_Baby_names/        (junction — not committed)
+    │   ├── Question2_files/
+    │   │   ├── figures/               (5 PNGs — persisted plot outputs)
+    │   │   └── tables/                (6 CSVs — persisted analysis outputs)
+    │   ├── Template/ and Tex/
+    │
+    ├── Question3/          ← Loans & Credit (HTML paged output)
+    │   ├── Question3.Rmd
+    │   ├── code/
+    │   │   ├── clean_loans.R      (status classification, rate parsing)
+    │   │   └── plot_loans.R       (grade, home ownership, DTI, state maps)
+    │   ├── data/Loan_Cred/        (junction — not committed)
+    │   ├── Template/ and Tex/
+    │
+    └── Question4/          ← Netflix (HTML paged output)
+        ├── Question4.Rmd
+        ├── code/
+        │   └── netflix_plots.R    (genre, runtime, score dist, text analysis)
+        ├── data/netflix/          (junction — not committed)
+        ├── Template/ and Tex/
+
+> **Status note:** Questions 1, 3 and 4 currently use the original
+> single-file-per-concern `code/` layout shown above. Question 2 has
+> been migrated to the fully modular, functional-programming structure
+> described below, wsince it had a lot of moving pieces to easily manage debuging; the other
+> three questions will be updated to match in due course. This README
+> will be expanded with their detailed approaches once that happens.
+
+------------------------------------------------------------------------
+
+## Question Summaries
 
 ------------------------------------------------------------------------
 
